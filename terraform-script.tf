@@ -88,6 +88,7 @@ resource "aws_instance" "web_server_1" {
   instance_type   = var.instance_type
   subnet_id       = aws_subnet.subnet_1.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
+  associate_public_ip_address = true
 
   tags = {
     Name = "WebServer1"
@@ -107,6 +108,7 @@ resource "aws_instance" "web_server_2" {
   instance_type   = var.instance_type
   subnet_id       = aws_subnet.subnet_2.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
+  associate_public_ip_address = true
 
   tags = {
     Name = "WebServer2"
